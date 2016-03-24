@@ -50,8 +50,8 @@
                              :compiler {:output-to "target/cljsbuild/public/js/app.js"
                                         :output-dir "target/cljsbuild/public/js/out"
                                         :asset-path   "/js/out"
-                                        :optimizations :none
-                                        :pretty-print  true}}}}
+                                        :optimizations :advanced
+                                        :pretty-print  false}}}}
 
 
   :profiles {:dev {:repl-options {:init-ns prisoner.repl}
