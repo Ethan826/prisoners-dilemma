@@ -24,4 +24,4 @@
     [:defect :defect] [punishment punishment]))
 
 (defn get-score [results]
-  (reduce #(map + (score-game %2) %) [0 0] results))
+  (reduce #(doall (map + (score-game %2) %)) [0 0] results))

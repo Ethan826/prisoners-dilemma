@@ -26,13 +26,14 @@
   "Given a vector of vectors of results and the player number :player1 or
    :player2, returns the player’s previous move. If the results vector
    is empty, returns nil."
-  ((:me (get-prev-move-helper results player-num)) (last results)))
+  (:me (get-prev-move-helper results player-num)) (last results))
 
+;; ERROR here occurs when Tit for Tat
 (defn get-their-prev-move [results player-num]
   "Given a vector of vectors of results and the player number :player1 or
    :player2, returns the opposite player’s previous move. If the results vector
    is empty, returns nil."
-  ((:them (get-prev-move-helper results player-num)) (last results)))
+  (:them (get-prev-move-helper results player-num)) (last results))
 
 (defn all-cooperate [_ __]
   "Always cooperates, regardless of arguments."
@@ -45,7 +46,8 @@
 (defn random [_ __]
   "Returns a random move, regardless of arguments."
   (if (= 0 (rand-int 2))
-    :cooperate :defect))
+    :cooperate
+    :defect))
 
 (defn tit-for-tat [results player-num]
   "Opens with cooperate, plays opponent's previous move thereafter."
@@ -73,3 +75,10 @@
        (get-their-prev-move results player-num))
     :cooperate
     :defect))
+
+(def players {:all-cooperate {:fn all-cooperate :name "All Cooperate"}
+              :all-defect {:fn all-defect :name "All Defect"}
+              :random {:fn random :name "Random"}
+              :tit-for-tat {:fn tit-for-tat :name "Tit for Tat"}
+              :grim-trigger {:fn grim-trigger :name "Grim Trigger"}
+              :pavlov {:fn pavlov :name "Pavlov"}})
