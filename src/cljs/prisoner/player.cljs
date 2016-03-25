@@ -53,7 +53,7 @@
   "Opens with cooperate, plays opponent's previous move thereafter."
   (if (= 0 (count results))
     :cooperate
-    (get-their-prev-move results player-num)))
+    (first (get-their-prev-move results player-num))))
 
 (defn grim-trigger [results player-num]
   "Plays cooperate until a single defect, then always defects."
