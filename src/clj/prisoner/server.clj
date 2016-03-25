@@ -6,4 +6,6 @@
 
  (defn -main [& args]
    (let [port (Integer/parseInt (or (env :port) "8082"))]
-     (run-jetty app {:port port :join? false})))
+     (run-jetty app {:port port
+                     :join? false
+                     :host "localhost"})))
