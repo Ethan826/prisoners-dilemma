@@ -25,7 +25,7 @@
 
 
 (defroutes routes
-  (GET "/" [] loading-page)
+  (GET "/prisoner" [] loading-page)
   ;; (GET "/about" [] loading-page)
 
   (resources "/")
