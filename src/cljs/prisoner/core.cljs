@@ -24,6 +24,7 @@
       (assoc @master-copy-of-doc :rounds value)
       @master-copy-of-doc)
     nil))
+
 ;; -------------------------
 ;; Components and functions
 
@@ -98,7 +99,7 @@
 ;; -------------------------
 ;; Routes
 
-(secretary/defroute "/" []
+(secretary/defroute "/prisoner" []
   (session/put! :current-page #'home-page))
 
 ;; -------------------------

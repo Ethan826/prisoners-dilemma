@@ -23,6 +23,8 @@
 
   :plugins [[lein-environ "1.0.2"]
             [lein-cljsbuild "1.1.1"]
+            ;; [lein-ring "1.4.0"]
+            ;; [compojure "1.5.0"]
             [lein-asset-minifier "0.2.7"
              :exclusions [org.clojure/clojure]]]
 
