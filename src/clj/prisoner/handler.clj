@@ -21,14 +21,14 @@
     (include-css "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")]
    [:body
     mount-target
-    (include-js "/js/app.js")]))
+    (include-js "prisoner/js/app.js")]))
 
 
 (defroutes routes
   (GET "/" [] loading-page)
   ;; (GET "/about" [] loading-page)
 
-  (resources "/")
+  (resources "/prisoner")
   (not-found "Not Found"))
 
 (def app (wrap-middleware #'routes))
