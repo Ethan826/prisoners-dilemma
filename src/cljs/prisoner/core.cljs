@@ -104,18 +104,7 @@
 ;; -------------------------
 ;; Initialize app
 
-(defn mount-root []
-  (reagent/render [current-page] (.getElementById js/document "app")))
-
 (defn init! []
-  (accountant/configure-navigation!
-   {:nav-handler
-    (fn [path]
-      (secretary/dispatch! path))
-    :path-exists?
-    (fn [path]
-      (secretary/locate-route path))})
-  (accountant/dispatch-current!)
-  (mount-root))
+  (reagent/render [home-page] (.getElementById js/document "app")))
 
 (enable-console-print!)
